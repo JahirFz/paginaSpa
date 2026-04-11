@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Las Flores Spa — Bienestar y Belleza</title>
+    <meta name="description" content="De Las Flores Spa: servicios de belleza, cuidado facial, masajes relajantes, uñas y tratamientos corporales. Reserva tu cita hoy.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ═══════════════════ NAVBAR ═══════════════════ -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#inicio" class="nav-logo">
+                <span class="logo-icon">✿</span>
+                <span class="logo-text">De Las Flores <span class="logo-accent">Spa</span></span>
+            </a>
+            <ul id="nav-menu" class="nav-menu">
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            <a href="https://wa.me/522227645314?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20cita" target="_blank" class="nav-btn" id="nav-reserve-btn">
+                <span class="btn-icon">📅</span> Reservar Cita
+            </a>
+            <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menú">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════ HERO ═══════════════════ -->
+    <section id="inicio" class="hero">
+        <div class="hero-bg">
+            <img src="img/hero.png" alt="De Las Flores Spa" class="hero-img">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <p class="hero-subtitle reveal">✿ Bienvenida a tu santuario de bienestar</p>
+            <h1 class="hero-title reveal">De Las Flores <em>Spa</em></h1>
+            <p class="hero-desc reveal">Descubre una experiencia única de relajación y belleza. Tratamientos personalizados, ambiente sereno y profesionales dedicados a tu cuidado.</p>
+            <div class="hero-actions reveal">
+                <a href="#servicios" class="btn btn-primary">Nuestros Servicios</a>
+                <a href="https://wa.me/522227645314?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20cita" target="_blank" class="btn btn-outline">
+                    <svg class="whatsapp-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Reservar por WhatsApp
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#servicios" aria-label="Ver servicios">
+                <div class="scroll-indicator">
+                    <div class="scroll-dot"></div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ SERVICIOS ═══════════════════ -->
+    <section id="servicios" class="services-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-tag">✿ Lo que ofrecemos</p>
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <p class="section-desc">Cada servicio está diseñado para brindarte una experiencia única de belleza y bienestar</p>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="category-tabs reveal">
+                <button class="cat-tab active" data-category="ojos">
+                    <span class="cat-icon">👁️</span>
+                    <span class="cat-label">Ojos</span>
+                </button>
+                <button class="cat-tab" data-category="salon">
+                    <span class="cat-icon">💅</span>
+                    <span class="cat-label">Salón de Belleza</span>
+                </button>
+                <button class="cat-tab" data-category="spa">
+                    <span class="cat-icon">🧖‍♀️</span>
+                    <span class="cat-label">Spa</span>
+                </button>
+            </div>
+
+            <!-- ── OJOS ── -->
+            <div id="cat-ojos" class="category-panel active">
+                <div class="category-hero-card reveal">
+                    <img src="img/service-ojos.png" alt="Servicios de Ojos" class="cat-hero-img">
+                    <div class="cat-hero-overlay">
+                        <h3>Ojos</h3>
+                        <p>Realza tu mirada con nuestros tratamientos especializados de cejas y pestañas</p>
+                    </div>
+                </div>
+                <div class="services-grid">
+                    <!-- Cejas -->
+                    <div class="service-card reveal">
+                        <div class="service-badge">Cejas</div>
+                        <h4 class="service-name">Planchado de Ceja</h4>
+                        <p class="service-desc">Alineación y alisado de las fibras de la ceja para un look natural y ordenado.</p>
+                        <div class="service-footer">
+                            <span class="service-price">$180</span>
+                            <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Planchado%20de%20Ceja%20%24180" target="_blank" class="btn-reserve">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-badge">Cejas</div>
+                        <h4 class="service-name">Planchado + Henna + Diseño</h4>
+                        <p class="service-desc">Paquete completo: planchado, tintura con henna y diseño personalizado de cejas.</p>
+                        <div class="service-footer">
+                            <span class="service-price">$250</span>
+                            <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Planchado%20%2B%20Henna%20%2B%20Dise%C3%B1o%20%24250" target="_blank" class="btn-reserve">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-badge">Cejas</div>
+                        <h4 class="service-name">Perfil de Ceja</h4>
+                        <p class="service-desc">Depilación precisa para perfilar y definir la forma de tu ceja.</p>
+                        <div class="service-footer">
+                            <span class="service-price">$50</span>
+                            <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Perfil%20de%20Ceja%20%2450" target="_blank" class="btn-reserve">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-badge">Cejas</div>
+                        <h4 class="service-name">Microblading Pelo a Pelo</h4>
+                        <p class="service-desc">Técnica de micropigmentación semipermanente que simula vellos naturales para cejas más definidas.</p>
+                        <div class="service-footer">
+                            <span class="service-price">$3,000</span>
+                            <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Microblading%20Pelo%20a%20Pelo%20%243%2C000" target="_blank" class="btn-reserve">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-badge">Cejas</div>
+                        <h4 class="service-name">Microblading Retoque / Híbrido / Efecto Polvo</h4>
+                        <p class="service-desc">Retoque o técnica avanzada de microblading híbrido o efecto polvo para un acabado perfecto.</p>
+                        <div class="service-footer">
+                            <span class="service-price">$3,500</span>
+                            <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Microblading%20Retoque%20%243%2C500" target="_blank" class="btn-reserve">Reservar</a>
+                        </div>
+                    </div>
+                    <!-- Pestañas -->
+                    <div class="service-card reveal">
+                        <div class="service-badge">Pestañas</div>
+                        <h4 class="service-name">Pestaña Clásica</h4>
+                        <p class="service-desc">Extensiones de pestañas una a una para un look natural y elegante.</p>
+                        <div class="service-footer">
+                            <span class="service-price">$550</span>
+                            <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Pesta%C3%B1a%20Cl%C3%A1sica%20%24550" target="_blank" class="btn-reserve">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-badge">Pestañas</div>
+                        <h4 class="service-name">Hybrid</h4>
+                        <p class="service-desc">Combinación de extensiones clásicas y volumen para una mirada más intensa.</p>
+                        <div class="service-footer">
+                            <span class="service-price">$650</span>
+                            <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Pesta%C3%B1a%20Hybrid%20%24650" target="_blank" class="btn-reserve">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-badge">Pestañas</div>
+                        <h4 class="service-name">Volumen</h4>
+                        <p class="service-desc">Abanicos de múltiples extensiones para un volumen espectacular y dramático.</p>
+                        <div class="service-footer">
+                            <span class="service-price">$700</span>
+                            <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Pesta%C3%B1a%20Volumen%20%24700" target="_blank" class="btn-reserve">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-badge">Pestañas</div>
+                        <h4 class="service-name">Otros Volúmenes</h4>
+                        <p class="service-desc">Técnicas avanzadas de volumen: mega volumen, volumen ruso y estilos personalizados.</p>
+                        <div class="service-footer">
+                            <span class="service-price">$750</span>
+                            <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Otros%20Vol%C3%BAmenes%20%24750" target="_blank" class="btn-reserve">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-badge">Pestañas</div>
+                        <h4 class="service-name">Lifting de Pestañas</h4>
+                        <p class="service-desc">Levantamiento y curvatura natural de tus pestañas sin extensiones.</p>
+                        <div class="service-footer">
+                            <span class="service-price">$250</span>
+                            <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Lifting%20de%20Pesta%C3%B1as%20%24250" target="_blank" class="btn-reserve">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-badge">Pestañas</div>
+                        <h4 class="service-name">Retoque 15–20 días</h4>
+                        <p class="service-desc">Mantenimiento de extensiones para mantener tu look impecable.</p>
+                        <div class="service-footer">
+                            <span class="service-price">$480</span>
+                            <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Retoque%20Pesta%C3%B1as%20%24480" target="_blank" class="btn-reserve">Reservar</a>
+                        </div>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-badge">Pestañas</div>
+                        <h4 class="service-name">Retiro de Pestañas</h4>
+                        <p class="service-desc">Remoción segura y profesional de tus extensiones de pestañas.</p>
+                        <div class="service-footer">
+                            <span class="service-price">$60</span>
+                            <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Retiro%20de%20Pesta%C3%B1as%20%2460" target="_blank" class="btn-reserve">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── SALÓN DE BELLEZA ── -->
+            <div id="cat-salon" class="category-panel">
+                <div class="category-hero-card reveal">
+                    <img src="img/service-salon.png" alt="Salón de Belleza" class="cat-hero-img">
+                    <div class="cat-hero-overlay">
+                        <h3>Salón de Belleza</h3>
+                        <p>Uñas perfectas con las mejoras técnicas: acrílico, gel, rubber, polygel y más</p>
+                    </div>
+                </div>
+
+                <!-- Sub-category tabs -->
+                <div class="sub-tabs reveal">
+                    <button class="sub-tab active" data-sub="unas">Uñas Esculturales</button>
+                    <button class="sub-tab" data-sub="geles">Geles</button>
+                    <button class="sub-tab" data-sub="rubber">Rubber</button>
+                    <button class="sub-tab" data-sub="polygel">Polygel</button>
+                    <button class="sub-tab" data-sub="babyboomer">Babyboomer</button>
+                    <button class="sub-tab" data-sub="decoracion">Decoración</button>
+                    <button class="sub-tab" data-sub="manicura">Manicura</button>
+                    <button class="sub-tab" data-sub="paquetes">Paquetes</button>
+                </div>
+
+                <!-- Uñas -->
+                <div id="sub-unas" class="sub-panel active">
+                    <div class="services-grid">
+                        <div class="service-card reveal">
+                            <div class="service-badge">Esculturales</div>
+                            <h4 class="service-name">Escultural Cristal hasta N3</h4>
+                            <p class="service-desc">Uñas esculturales en cristal con acabado impecable hasta número 3.</p>
+                            <p class="service-note">Número extra: $50 por número</p>
+                            <div class="service-footer">
+                                <span class="service-price">$230</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Escultural%20Cristal%20%24230" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Acrílico</div>
+                            <h4 class="service-name">Acrílico de Color s/gel</h4>
+                            <p class="service-desc">Uñas acrílicas de color sin gel, técnica covers para un look natural.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$190</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Acr%C3%ADlico%20de%20Color%20%24190" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Mantenimiento</div>
+                            <h4 class="service-name">Retoque</h4>
+                            <p class="service-desc">Relleno y mantenimiento de tus uñas esculturales o acrílicas.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$90</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Retoque%20U%C3%B1as%20%2490" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Mantenimiento</div>
+                            <h4 class="service-name">Retiro</h4>
+                            <p class="service-desc">Retiro profesional y seguro de uñas esculturales o acrílicas.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$90</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Retiro%20U%C3%B1as%20%2490" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geles -->
+                <div id="sub-geles" class="sub-panel">
+                    <div class="services-grid">
+                        <div class="service-card reveal">
+                            <div class="service-badge">Gel</div>
+                            <h4 class="service-name">Gel sobre Uña Natural</h4>
+                            <p class="service-desc">Aplicación de gel protector y embellecedor sobre tu uña natural.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$120</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Gel%20sobre%20U%C3%B1a%20Natural%20%24120" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Gel</div>
+                            <h4 class="service-name">Cambio de Gel</h4>
+                            <p class="service-desc">Renovación completa del gel en tus uñas para un acabado fresco.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$170</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Cambio%20de%20Gel%20%24170" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Gel</div>
+                            <h4 class="service-name">Retiro de Gel</h4>
+                            <p class="service-desc">Retiro seguro del gel sin dañar tu uña natural.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$50</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Retiro%20de%20Gel%20%2450" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rubber -->
+                <div id="sub-rubber" class="sub-panel">
+                    <div class="services-grid">
+                        <div class="service-card reveal">
+                            <div class="service-badge">Rubber</div>
+                            <h4 class="service-name">Rubber Color</h4>
+                            <p class="service-desc">Base rubber con color para un acabado flexible y resistente.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$170</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Rubber%20Color%20%24170" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Rubber</div>
+                            <h4 class="service-name">Rubber Cristal</h4>
+                            <p class="service-desc">Base rubber transparente para un look natural y brillante.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$130</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Rubber%20Cristal%20%24130" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Mantenimiento</div>
+                            <h4 class="service-name">Retoque Rubber</h4>
+                            <p class="service-desc">Color $150 · Cristal $110</p>
+                            <div class="service-footer">
+                                <span class="service-price">Desde $110</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Retoque%20Rubber" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Mantenimiento</div>
+                            <h4 class="service-name">Retiro Rubber</h4>
+                            <p class="service-desc">Retiro seguro y profesional de la base rubber.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$80</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Retiro%20Rubber%20%2480" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Polygel -->
+                <div id="sub-polygel" class="sub-panel">
+                    <div class="services-grid">
+                        <div class="service-card reveal">
+                            <div class="service-badge">Polygel</div>
+                            <h4 class="service-name">Recubrimiento Polygel</h4>
+                            <p class="service-desc">Capa protectora de polygel sobre tu uña natural para fuerza y brillo.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$150</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Recubrimiento%20Polygel%20%24150" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Polygel</div>
+                            <h4 class="service-name">Tip Cristal hasta N3</h4>
+                            <p class="service-desc">Extensión con tip cristal en polygel hasta número 3.</p>
+                            <p class="service-note">Número extra: $50 por número</p>
+                            <div class="service-footer">
+                                <span class="service-price">$230</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Polygel%20Tip%20Cristal%20%24230" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Polygel</div>
+                            <h4 class="service-name">Escultural Cristal hasta N3</h4>
+                            <p class="service-desc">Uña escultural de polygel cristal hasta número 3.</p>
+                            <p class="service-note">Número extra: $50 · Color: +$50</p>
+                            <div class="service-footer">
+                                <span class="service-price">$260</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Polygel%20Escultural%20%24260" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Mantenimiento</div>
+                            <h4 class="service-name">Retoque Polygel</h4>
+                            <p class="service-desc">Relleno y mantenimiento de tus uñas de polygel.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$180</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Retoque%20Polygel%20%24180" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Mantenimiento</div>
+                            <h4 class="service-name">Retiro Polygel</h4>
+                            <p class="service-desc">Retiro profesional de tus uñas de polygel.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$90</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Retiro%20Polygel%20%2490" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Babyboomer -->
+                <div id="sub-babyboomer" class="sub-panel">
+                    <div class="services-grid">
+                        <div class="service-card reveal">
+                            <div class="service-badge">Babyboomer</div>
+                            <h4 class="service-name">Babyboomer Escultural</h4>
+                            <p class="service-desc">Degradado elegante nude a blanco en uñas esculturales. El estilo más sofisticado.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$310</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Babyboomer%20Escultural%20%24310" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Babyboomer</div>
+                            <h4 class="service-name">Babyboomer Tip</h4>
+                            <p class="service-desc">Extensión con tip y acabado babyboomer para un look clásico y delicado.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$290</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Babyboomer%20Tip%20%24290" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decoración -->
+                <div id="sub-decoracion" class="sub-panel">
+                    <div class="services-grid">
+                        <div class="service-card reveal">
+                            <div class="service-badge">Decoración</div>
+                            <h4 class="service-name">Efectos — Set Completo</h4>
+                            <p class="service-desc">Efectos especiales (cat eye, aurora, espejo, etc.) en set completo de 10 uñas.</p>
+                            <p class="service-note">$50 por uña individual</p>
+                            <div class="service-footer">
+                                <span class="service-price">$50<span class="price-unit">/dedo</span></span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Decoraci%C3%B3n%20Efectos" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Decoración</div>
+                            <h4 class="service-name">Francés — Set Completo</h4>
+                            <p class="service-desc">Diseño francés clásico o moderno en set completo de 10 uñas.</p>
+                            <p class="service-note">$50 por uña individual</p>
+                            <div class="service-footer">
+                                <span class="service-price">$50<span class="price-unit">/dedo</span></span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Decoraci%C3%B3n%20Franc%C3%A9s" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manicura -->
+                <div id="sub-manicura" class="sub-panel">
+                    <div class="services-grid">
+                        <div class="service-card reveal">
+                            <div class="service-badge">Ruso</div>
+                            <h4 class="service-name">Manicura Rusa</h4>
+                            <p class="service-desc">Técnica rusa de preparación de cutículas con fresadora para un acabado limpio y duradero.</p>
+                            <div class="service-footer">
+                                <div class="price-options">
+                                    <span class="service-price">Sin gel $90</span>
+                                    <span class="service-price">Con gel $190</span>
+                                </div>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Manicura%20Rusa" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Spa</div>
+                            <h4 class="service-name">Manicura Spa</h4>
+                            <p class="service-desc">Experiencia completa de relajación con exfoliación, mascarilla hidratante y masaje de manos.</p>
+                            <div class="service-footer">
+                                <div class="price-options">
+                                    <span class="service-price">Sin gel $120</span>
+                                    <span class="service-price">Con gel $230</span>
+                                </div>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Manicura%20Spa" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paquetes -->
+                <div id="sub-paquetes" class="sub-panel">
+                    <div class="services-grid">
+                        <div class="service-card featured reveal">
+                            <div class="service-badge">Paquete</div>
+                            <div class="featured-label">✿ Más Popular</div>
+                            <h4 class="service-name">Pedicura + Manicura Rusa</h4>
+                            <p class="service-desc">Paquete completo de pedicura y manicura con técnica rusa.</p>
+                            <div class="service-footer">
+                                <div class="price-options">
+                                    <span class="service-price">Sin gel $300</span>
+                                    <span class="service-price">Con gel $460</span>
+                                </div>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Paquete%20Pedicura%20%2B%20Manicura%20Rusa" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card featured reveal">
+                            <div class="service-badge">Paquete</div>
+                            <div class="featured-label">✿ Premium</div>
+                            <h4 class="service-name">Pedicura + Manicura Spa</h4>
+                            <p class="service-desc">Paquete premium de pedicura y manicura spa con experiencia relajante completa.</p>
+                            <div class="service-footer">
+                                <div class="price-options">
+                                    <span class="service-price">Sin gel $430</span>
+                                    <span class="service-price">Con gel $640</span>
+                                </div>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Paquete%20Pedicura%20%2B%20Manicura%20Spa" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── SPA ── -->
+            <div id="cat-spa" class="category-panel">
+                <div class="category-hero-card reveal">
+                    <img src="img/service-spa.png" alt="Servicios de Spa" class="cat-hero-img">
+                    <div class="cat-hero-overlay">
+                        <h3>Spa</h3>
+                        <p>Tratamientos faciales, masajes terapéuticos y cuidado corporal integral</p>
+                    </div>
+                </div>
+
+                <div class="sub-tabs reveal">
+                    <button class="sub-tab active" data-sub="facial">Facial</button>
+                    <button class="sub-tab" data-sub="masaje">Masaje</button>
+                    <button class="sub-tab" data-sub="piel">Piel</button>
+                    <button class="sub-tab" data-sub="podologia">Podología</button>
+                    <button class="sub-tab" data-sub="pedicura-spa">Pedicura Spa</button>
+                </div>
+
+                <!-- Facial -->
+                <div id="sub-facial" class="sub-panel active">
+                    <div class="services-grid">
+                        <div class="service-card reveal">
+                            <div class="service-badge">Facial</div>
+                            <h4 class="service-name">Facial Hidratante</h4>
+                            <p class="service-desc">Hidratación profunda que devuelve luminosidad y suavidad a tu piel.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$550</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Facial%20Hidratante%20%24550" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Facial</div>
+                            <h4 class="service-name">Facial Aclarante</h4>
+                            <p class="service-desc">Tratamiento despigmentante que unifica el tono de tu piel.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$650</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Facial%20Aclarante%20%24650" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Facial</div>
+                            <h4 class="service-name">Facial Básico Relajante</h4>
+                            <p class="service-desc">Limpieza facial con masaje relajante para consentir tu piel.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$450</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Facial%20B%C3%A1sico%20Relajante%20%24450" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Facial</div>
+                            <h4 class="service-name">Limpieza Profunda Antiséptico</h4>
+                            <p class="service-desc">Limpieza profunda con productos antisépticos para piel grasa o con impurezas.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$550</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Limpieza%20Profunda%20Antis%C3%A9ptico%20%24550" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Premium</div>
+                            <h4 class="service-name">Hollywood Peel</h4>
+                            <p class="service-desc">Peeling con carbón activado y láser para una piel radiante al instante.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$850</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Hollywood%20Peel%20%24850" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Premium</div>
+                            <h4 class="service-name">Plasma Pen por Zona</h4>
+                            <p class="service-desc">Rejuvenecimiento con plasma pen para tensar y renovar la piel zona por zona.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$890</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Plasma%20Pen%20%24890" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Premium</div>
+                            <h4 class="service-name">Rejuvenecimiento con Láser</h4>
+                            <p class="service-desc">Estimulación de colágeno mediante láser para reducir arrugas y líneas de expresión.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$690</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Rejuvenecimiento%20L%C3%A1ser%20%24690" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Premium</div>
+                            <h4 class="service-name">Microdermoabrasión</h4>
+                            <p class="service-desc">Exfoliación profunda con microcristales para renovar la textura de tu piel.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$960</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Microdermoabrasi%C3%B3n%20%24960" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card featured reveal">
+                            <div class="service-badge">Exclusivo</div>
+                            <div class="featured-label">✿ Top</div>
+                            <h4 class="service-name">Hi-Fu Facial</h4>
+                            <p class="service-desc">Ultrasonido focalizado de alta intensidad para un lifting no invasivo con resultados visibles.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$3,500</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Hi-Fu%20Facial%20%243%2C500" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Facial</div>
+                            <h4 class="service-name">Lifting Manual o Microcorrientes</h4>
+                            <p class="service-desc">Tonificación muscular facial con masaje manual o dispositivo de microcorrientes.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$650</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Lifting%20Manual%20%24650" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Masaje -->
+                <div id="sub-masaje" class="sub-panel">
+                    <div class="services-grid">
+                        <div class="service-card featured reveal">
+                            <div class="service-badge">Paquete</div>
+                            <div class="featured-label">✿ 10 sesiones</div>
+                            <h4 class="service-name">Drenaje Linfático Post Quirúrgico</h4>
+                            <p class="service-desc">Paquete de 10 sesiones de drenaje linfático especializado para recuperación post cirugía.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$5,500</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Drenaje%20Linf%C3%A1tico%20Paq%2010%20%245%2C500" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Masaje</div>
+                            <h4 class="service-name">Masaje Descontracturante</h4>
+                            <p class="service-desc">Liberación de tensión muscular profunda para aliviar contracturas y dolor.</p>
+                            <div class="service-footer">
+                                <div class="price-options">
+                                    <span class="service-price">Individual $550</span>
+                                    <span class="service-price couple">En pareja $999</span>
+                                </div>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Masaje%20Descontracturante" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Masaje</div>
+                            <h4 class="service-name">Masaje con Piedras Calientes</h4>
+                            <p class="service-desc">Terapia con piedras volcánicas calientes para relajación profunda y alivio muscular.</p>
+                            <div class="service-footer">
+                                <div class="price-options">
+                                    <span class="service-price">Individual $550</span>
+                                    <span class="service-price couple">En pareja $899</span>
+                                </div>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Masaje%20Piedras%20Calientes" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Masaje</div>
+                            <h4 class="service-name">Masaje Relajante</h4>
+                            <p class="service-desc">Masaje de presión media con aceites esenciales para una relajación total.</p>
+                            <div class="service-footer">
+                                <div class="price-options">
+                                    <span class="service-price">Individual $500</span>
+                                    <span class="service-price couple">En pareja $999</span>
+                                </div>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Masaje%20Relajante" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Masaje</div>
+                            <h4 class="service-name">Masaje Deportivo</h4>
+                            <p class="service-desc">Tratamiento enfocado en músculos fatigados por actividad física intensa.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$550</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Masaje%20Deportivo%20%24550" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Complemento</div>
+                            <h4 class="service-name">Electroestimulador</h4>
+                            <p class="service-desc">Estimulación muscular eléctrica como complemento a tu tratamiento.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$250</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Electroestimulador%20%24250" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Complemento</div>
+                            <h4 class="service-name">Champi</h4>
+                            <p class="service-desc">Masaje indio de cabeza para aliviar estrés y tensión. Ideal como complemento.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$100</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Champi%20%24100" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card featured reveal">
+                            <div class="service-badge">Paquete</div>
+                            <div class="featured-label">✿ 10 sesiones</div>
+                            <h4 class="service-name">Levantamiento de Senos o Glúteos</h4>
+                            <p class="service-desc">Paquete de 10 sesiones de levantamiento y tonificación modelante.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$2,900</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Levantamiento%20Paq%2010%20%242%2C900" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Piel -->
+                <div id="sub-piel" class="sub-panel">
+                    <div class="services-grid">
+                        <!-- Aclaramiento -->
+                        <div class="service-card reveal">
+                            <div class="service-badge">Aclaramiento</div>
+                            <h4 class="service-name">Aclaramiento de Codo</h4>
+                            <p class="service-desc">Despigmentación con ácido glicólico para aclarar zonas oscuras del codo.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$180<span class="price-unit">/sesión</span></span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Aclaramiento%20Codo%20%24180" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Aclaramiento</div>
+                            <h4 class="service-name">Aclaramiento de Axila</h4>
+                            <p class="service-desc">Tratamiento especializado para aclarar la piel de las axilas.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$180<span class="price-unit">/sesión</span></span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Aclaramiento%20Axila%20%24180" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Aclaramiento</div>
+                            <h4 class="service-name">Aclaramiento de Rodilla</h4>
+                            <p class="service-desc">Despigmentación de zona oscura de las rodillas con ácido glicólico.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$180<span class="price-unit">/sesión</span></span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Aclaramiento%20Rodilla%20%24180" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Aclaramiento</div>
+                            <h4 class="service-name">Aclaramiento Entre Pierna</h4>
+                            <p class="service-desc">Tratamiento despigmentante para zona de entrepierna con ácido glicólico.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$250<span class="price-unit">/sesión</span></span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Aclaramiento%20Entrepierna%20%24250" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <!-- Corporal -->
+                        <div class="service-card reveal">
+                            <div class="service-badge">Corporal</div>
+                            <h4 class="service-name">Reductivo Corporal por Zona</h4>
+                            <p class="service-desc">Tratamiento reductor localizado para moldear y reducir medidas.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$2,500</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Reductivo%20Corporal%20%242%2C500" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Corporal</div>
+                            <h4 class="service-name">Estilizado con Bambú</h4>
+                            <p class="service-desc">Paquete de 7 sesiones de masaje modelante con cañas de bambú.</p>
+                            <p class="service-note">7 sesiones incluidas</p>
+                            <div class="service-footer">
+                                <span class="service-price">$2,500</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Estilizado%20Bamb%C3%BA%20%242%2C500" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card featured reveal">
+                            <div class="service-badge">Premium</div>
+                            <div class="featured-label">✿ Avanzado</div>
+                            <h4 class="service-name">Lipo sin Cirugía</h4>
+                            <p class="service-desc">Tratamiento no invasivo de reducción de grasa localizada con tecnología avanzada.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$4,500<span class="price-unit">/sesión</span></span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Lipo%20sin%20Cirug%C3%ADa%20%244%2C500" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Láser</div>
+                            <h4 class="service-name">Retiro de Tatuaje</h4>
+                            <p class="service-desc">Eliminación progresiva de tatuaje con tecnología láser.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$250<span class="price-unit">/sesión</span></span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Retiro%20de%20Tatuaje%20%24250" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <!-- Depilación Láser -->
+                        <div class="service-card reveal">
+                            <div class="service-badge">Láser · 9 sesiones</div>
+                            <h4 class="service-name">Depilación Láser — Bozo y Bigote</h4>
+                            <p class="service-desc">Depilación láser de tridiodo para bozo y bigote. Paquete de 9 sesiones.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$4,900</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Depilaci%C3%B3n%20L%C3%A1ser%20Bozo%20y%20Bigote%20%244%2C900" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Láser · 9 sesiones</div>
+                            <h4 class="service-name">Depilación Láser — Piernas</h4>
+                            <p class="service-desc">Depilación láser de tridiodo para piernas completas. Paquete de 9 sesiones.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$6,500</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Depilaci%C3%B3n%20L%C3%A1ser%20Piernas%20%246%2C500" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Láser · 9 sesiones</div>
+                            <h4 class="service-name">Depilación Láser — Bikini e Interglúteo</h4>
+                            <p class="service-desc">Depilación láser de tridiodo para zona bikini e interglúteo. Paquete de 9 sesiones.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$4,500</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Depilaci%C3%B3n%20L%C3%A1ser%20Bikini%20%244%2C500" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Láser · 9 sesiones</div>
+                            <h4 class="service-name">Depilación Láser — Axila, Bigote y Bozo</h4>
+                            <p class="service-desc">Paquete combinado de depilación láser tridiodo. 9 sesiones.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$6,000</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Depilaci%C3%B3n%20L%C3%A1ser%20Axila%2C%20Bigote%20y%20Bozo%20%246%2C000" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Extra</div>
+                            <h4 class="service-name">Bombas Efervescentes</h4>
+                            <p class="service-desc">Bombas de baño aromáticas para complementar tu experiencia de spa.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$15</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Bombas%20Efervescentes%20%2415" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Podología -->
+                <div id="sub-podologia" class="sub-panel">
+                    <div class="services-grid">
+                        <div class="service-card reveal">
+                            <div class="service-badge">Podología</div>
+                            <h4 class="service-name">Tratamiento Podólogo Preventivo</h4>
+                            <p class="service-desc">Cuidado preventivo de pies: corte de uñas, eliminación de callosidades y revisión general.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$290</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Pod%C3%B3logo%20Preventivo%20%24290" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Podología</div>
+                            <h4 class="service-name">Onicomicosis 5 a 10 Uñas</h4>
+                            <p class="service-desc">Tratamiento especializado para hongos en uñas de 5 a 10 uñas afectadas.</p>
+                            <div class="service-footer">
+                                <span class="service-price">$350</span>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Onicomicosis%20%24350" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pedicura Spa -->
+                <div id="sub-pedicura-spa" class="sub-panel">
+                    <div class="services-grid">
+                        <div class="service-card reveal">
+                            <div class="service-badge">Pedicura</div>
+                            <h4 class="service-name">Pedicura Rusa</h4>
+                            <p class="service-desc">Pedicura con técnica rusa de precisión para un acabado limpio y duradero.</p>
+                            <div class="service-footer">
+                                <div class="price-options">
+                                    <span class="service-price">Sin gel $290</span>
+                                    <span class="service-price">Con gel $350</span>
+                                </div>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Pedicura%20Rusa" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                        <div class="service-card reveal">
+                            <div class="service-badge">Pedicura</div>
+                            <h4 class="service-name">Pedicura Spa</h4>
+                            <p class="service-desc">Experiencia completa de pedicura con exfoliación, masaje y tratamiento hidratante.</p>
+                            <div class="service-footer">
+                                <div class="price-options">
+                                    <span class="service-price">Sin gel $350</span>
+                                    <span class="service-price">Con gel $410</span>
+                                </div>
+                                <a href="https://wa.me/522227645314?text=Hola%2C%20quiero%20reservar%20Pedicura%20Spa" target="_blank" class="btn-reserve">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ SOBRE NOSOTROS ═══════════════════ -->
+    <section id="nosotros" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <img src="img/about.png" alt="Interior De Las Flores Spa">
+                    <div class="about-image-accent"></div>
+                </div>
+                <div class="about-content">
+                    <p class="section-tag reveal">✿ Conócenos</p>
+                    <h2 class="section-title reveal">De Las Flores Spa</h2>
+                    <p class="about-text reveal">Somos un espacio dedicado al bienestar integral, donde cada detalle está diseñado para brindarte una experiencia única de relajación y belleza. Nuestro equipo de profesionales capacitados utiliza las mejores técnicas y productos para cuidar de ti.</p>
+                    <p class="about-text reveal">En De Las Flores Spa creemos que el cuidado personal es esencial para la salud y la confianza. Por eso ofrecemos una amplia gama de servicios que abarcan desde tratamientos faciales y corporales hasta servicios especializados de belleza.</p>
+                    <div class="about-stats reveal">
+                        <div class="stat">
+                            <span class="stat-number" data-target="50">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Servicios</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="1000">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Clientas Felices</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="100">0</span><span class="stat-plus">%</span>
+                            <span class="stat-label">Satisfacción</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ CTA ═══════════════════ -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2>¿Lista para consentirte?</h2>
+                <p>Reserva tu cita hoy y vive la experiencia De Las Flores Spa</p>
+                <a href="https://wa.me/522227645314?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20cita%20en%20De%20Las%20Flores%20Spa" target="_blank" class="btn btn-primary btn-lg">
+                    <svg class="whatsapp-icon" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Reservar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════ CONTACTO / FOOTER ═══════════════════ -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#inicio" class="nav-logo footer-logo">
+                        <span class="logo-icon">✿</span>
+                        <span class="logo-text">De Las Flores <span class="logo-accent">Spa</span></span>
+                    </a>
+                    <p class="footer-tagline">Tu santuario de bienestar y belleza</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li>
+                            <span class="footer-icon">📱</span>
+                            <a href="https://wa.me/522227645314" target="_blank">222 764 5314 (WhatsApp)</a>
+                        </li>
+                        <li>
+                            <span class="footer-icon">📞</span>
+                            <a href="tel:2229506289">222 950 6289 (Fijo)</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-hours">
+                    <h4>Horario</h4>
+                    <ul>
+                        <li>Lunes a Viernes: 9:00 – 19:00</li>
+                        <li>Sábado: 9:00 – 17:00</li>
+                        <li>Domingo: Cerrado</li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 De Las Flores Spa. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/522227645314?text=Hola%2C%20me%20gustar%C3%ADa%20más%20información%20sobre%20sus%20servicios" target="_blank" class="whatsapp-float" id="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
