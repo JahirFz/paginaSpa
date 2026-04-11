@@ -217,16 +217,138 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ═══════════════════ PARALLAX HERO (subtle) ═══════════════════
-    const heroImg = document.querySelector('.hero-img');
+    // ═══════════════════ HERO CAROUSEL ═══════════════════
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    const progressBar = document.getElementById('carousel-progress-bar');
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+    let autoPlayInterval = null;
+    let progressInterval = null;
+    const SLIDE_DURATION = 6000; // 6 seconds per slide
+    const PROGRESS_STEP = 30; // update every 30ms
 
-    if (heroImg && window.matchMedia('(min-width: 768px)').matches) {
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            if (scrollY < window.innerHeight) {
-                heroImg.style.transform = `scale(1.05) translateY(${scrollY * 0.15}px)`;
-            }
-        }, { passive: true });
+    function goToSlide(index) {
+        // Remove active from current
+        slides[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+
+        // Set new index
+        currentSlide = (index + totalSlides) % totalSlides;
+
+        // Activate new
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+
+        // Reset progress
+        resetProgress();
     }
+
+    function nextSlide() {
+        goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+        goToSlide(currentSlide - 1);
+    }
+
+    // Progress bar
+    function resetProgress() {
+        if (progressInterval) clearInterval(progressInterval);
+        let elapsed = 0;
+        progressBar.style.width = '0%';
+
+        progressInterval = setInterval(() => {
+            elapsed += PROGRESS_STEP;
+            const pct = (elapsed / SLIDE_DURATION) * 100;
+            progressBar.style.width = `${pct}%`;
+
+            if (elapsed >= SLIDE_DURATION) {
+                clearInterval(progressInterval);
+            }
+        }, PROGRESS_STEP);
+    }
+
+    // Auto-play
+    function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayInterval = setInterval(nextSlide, SLIDE_DURATION);
+        resetProgress();
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
+        if (progressInterval) clearInterval(progressInterval);
+    }
+
+    // Arrow events
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        startAutoPlay();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        startAutoPlay();
+    });
+
+    // Dot events
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const idx = parseInt(dot.dataset.slide, 10);
+            goToSlide(idx);
+            startAutoPlay();
+        });
+    });
+
+    // Pause on hover
+    const heroSection = document.getElementById('inicio');
+    heroSection.addEventListener('mouseenter', () => {
+        stopAutoPlay();
+    });
+    heroSection.addEventListener('mouseleave', () => {
+        startAutoPlay();
+    });
+
+    // Touch swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    heroSection.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    heroSection.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+            startAutoPlay();
+        }
+    }, { passive: true });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        // Only when hero is in view
+        const heroRect = heroSection.getBoundingClientRect();
+        if (heroRect.bottom < 0) return;
+
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+            startAutoPlay();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+            startAutoPlay();
+        }
+    });
+
+    // Start carousel
+    startAutoPlay();
 
 });
