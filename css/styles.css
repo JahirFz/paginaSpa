@@ -1027,7 +1027,7 @@ button {
 }
 
 .cta-section::before {
-    content: '✿';
+    content: '';
     position: absolute;
     font-size: 240px;
     opacity: 0.03;

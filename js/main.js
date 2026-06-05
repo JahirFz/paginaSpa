@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
     const catTabs = document.querySelectorAll('.cat-tab');
     const catPanels = document.querySelectorAll('.category-panel');
+    const serviceCategoryLinks = document.querySelectorAll('[data-service-category]');
 
     // ═══════════════════ NAVBAR SCROLL ═══════════════════
     let lastScroll = 0;
@@ -29,18 +30,21 @@ document.addEventListener('DOMContentLoaded', () => {
     handleNavbarScroll();
 
     // ═══════════════════ MOBILE MENU ═══════════════════
+    function setMobileMenu(open) {
+        navToggle.classList.toggle('active', open);
+        navMenu.classList.toggle('active', open);
+        navToggle.setAttribute('aria-expanded', String(open));
+        document.body.style.overflow = open ? 'hidden' : '';
+    }
+
     navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        setMobileMenu(!navMenu.classList.contains('active'));
     });
 
     // Close menu when clicking a link
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            setMobileMenu(false);
         });
     });
 
@@ -69,61 +73,105 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateActiveNav, { passive: true });
 
     // ═══════════════════ CATEGORY TABS ═══════════════════
-    catTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const category = tab.dataset.category;
+    function setCategory(category, options = {}) {
+        const targetTab = document.querySelector(`.cat-tab[data-category="${category}"]`);
+        const targetPanel = document.getElementById(`cat-${category}`);
+        if (!targetTab || !targetPanel) return;
 
-            // Update tabs
-            catTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
+        // Update tabs
+        catTabs.forEach(t => {
+            const selected = t === targetTab;
+            t.classList.toggle('active', selected);
+            t.setAttribute('aria-selected', String(selected));
+        });
 
-            // Update panels
-            catPanels.forEach(panel => panel.classList.remove('active'));
-            const targetPanel = document.getElementById(`cat-${category}`);
-            if (targetPanel) {
-                targetPanel.classList.add('active');
+        // Update panels
+        catPanels.forEach(panel => {
+            const selected = panel === targetPanel;
+            panel.classList.toggle('active', selected);
+            panel.setAttribute('aria-hidden', String(!selected));
+        });
 
-                // Re-trigger reveal animations for new panel
-                requestAnimationFrame(() => {
-                    const revealElements = targetPanel.querySelectorAll('.reveal');
-                    revealElements.forEach(el => {
-                        el.classList.remove('visible');
-                        void el.offsetWidth; // force reflow
-                    });
-                    // Observe them
-                    revealElements.forEach(el => revealObserver.observe(el));
-                });
-            }
+        // Re-trigger reveal animations for new panel
+        requestAnimationFrame(() => {
+            const revealElements = targetPanel.querySelectorAll('.reveal');
+            revealElements.forEach(el => {
+                el.classList.remove('visible');
+                void el.offsetWidth; // force reflow
+            });
+            // Observe them
+            revealElements.forEach(el => revealObserver.observe(el));
+        });
 
-            // Scroll to services section if not visible
+        if (options.scroll) {
             const servicesSection = document.getElementById('servicios');
             const rect = servicesSection.getBoundingClientRect();
             if (rect.top < -100) {
                 servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
+        }
+    }
+
+    catTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            setCategory(tab.dataset.category, { scroll: true });
+        });
+    });
+
+    serviceCategoryLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            setCategory(link.dataset.serviceCategory, { scroll: true });
+            document.getElementById('servicios').scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
 
     // ═══════════════════ SUB TABS ═══════════════════
-    document.addEventListener('click', (e) => {
-        const subTab = e.target.closest('.sub-tab');
-        if (!subTab) return;
+    document.querySelectorAll('.sub-tabs').forEach((tabList, listIndex) => {
+        tabList.setAttribute('role', 'tablist');
+        tabList.setAttribute('aria-label', 'Subcategorías de servicios');
 
+        const parentPanel = tabList.closest('.category-panel');
+        const tabs = tabList.querySelectorAll('.sub-tab');
+        tabs.forEach((tab, index) => {
+            const subId = tab.dataset.sub;
+            const panel = parentPanel.querySelector(`#sub-${subId}`);
+            const tabId = tab.id || `subtab-${listIndex}-${subId}`;
+
+            tab.id = tabId;
+            tab.setAttribute('role', 'tab');
+            tab.setAttribute('aria-selected', String(tab.classList.contains('active')));
+            if (panel) {
+                tab.setAttribute('aria-controls', panel.id);
+                panel.setAttribute('role', 'tabpanel');
+                panel.setAttribute('aria-labelledby', tabId);
+                panel.setAttribute('aria-hidden', String(!panel.classList.contains('active')));
+            }
+        });
+    });
+
+    function setSubTab(subTab) {
         const subId = subTab.dataset.sub;
         const parentPanel = subTab.closest('.category-panel');
 
-        // Update sub tabs  
+        // Update sub tabs
         const siblingTabs = parentPanel.querySelectorAll('.sub-tab');
-        siblingTabs.forEach(t => t.classList.remove('active'));
-        subTab.classList.add('active');
+        siblingTabs.forEach(t => {
+            const selected = t === subTab;
+            t.classList.toggle('active', selected);
+            t.setAttribute('aria-selected', String(selected));
+        });
 
         // Update sub panels
         const siblingPanels = parentPanel.querySelectorAll('.sub-panel');
-        siblingPanels.forEach(p => p.classList.remove('active'));
+        siblingPanels.forEach(p => {
+            const selected = p.id === `sub-${subId}`;
+            p.classList.toggle('active', selected);
+            p.setAttribute('aria-hidden', String(!selected));
+        });
+
         const targetSub = document.getElementById(`sub-${subId}`);
         if (targetSub) {
-            targetSub.classList.add('active');
-
             // Re-trigger reveal animations
             requestAnimationFrame(() => {
                 const revealElements = targetSub.querySelectorAll('.reveal');
@@ -134,6 +182,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 revealElements.forEach(el => revealObserver.observe(el));
             });
         }
+    }
+
+    document.addEventListener('click', (e) => {
+        const subTab = e.target.closest('.sub-tab');
+        if (!subTab) return;
+
+        setSubTab(subTab);
     });
 
     // ═══════════════════ SCROLL REVEAL ═══════════════════
@@ -229,18 +284,27 @@ document.addEventListener('DOMContentLoaded', () => {
     let progressInterval = null;
     const SLIDE_DURATION = 6000; // 6 seconds per slide
     const PROGRESS_STEP = 30; // update every 30ms
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function syncCarouselState() {
+        slides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === currentSlide);
+            slide.setAttribute('aria-hidden', String(index !== currentSlide));
+        });
+
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+            if (index === currentSlide) {
+                dot.setAttribute('aria-current', 'true');
+            } else {
+                dot.removeAttribute('aria-current');
+            }
+        });
+    }
 
     function goToSlide(index) {
-        // Remove active from current
-        slides[currentSlide].classList.remove('active');
-        dots[currentSlide].classList.remove('active');
-
-        // Set new index
         currentSlide = (index + totalSlides) % totalSlides;
-
-        // Activate new
-        slides[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
+        syncCarouselState();
 
         // Reset progress
         resetProgress();
@@ -257,6 +321,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Progress bar
     function resetProgress() {
         if (progressInterval) clearInterval(progressInterval);
+        if (prefersReducedMotion) {
+            progressBar.style.width = '0%';
+            return;
+        }
+
         let elapsed = 0;
         progressBar.style.width = '0%';
 
@@ -274,6 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Auto-play
     function startAutoPlay() {
         stopAutoPlay();
+        if (prefersReducedMotion) return;
         autoPlayInterval = setInterval(nextSlide, SLIDE_DURATION);
         resetProgress();
     }
@@ -349,6 +419,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Start carousel
+    syncCarouselState();
     startAutoPlay();
 
 });
