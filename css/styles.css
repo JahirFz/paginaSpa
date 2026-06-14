@@ -56,6 +56,23 @@ body {
     overflow-x: hidden;
 }
 
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(45, 37, 51, 0);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-fast), background var(--transition-fast);
+    z-index: 998;
+}
+
+body.menu-open::before {
+    background: rgba(45, 37, 51, 0.42);
+    opacity: 1;
+    pointer-events: auto;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -1184,12 +1201,25 @@ button {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 18px;
+    }
+
+    .nav-container {
+        padding: 0 18px;
+    }
+
+    .logo-text {
+        font-size: 1.15rem;
+    }
+
     .nav-menu {
         position: fixed;
         top: 0;
         right: -100%;
         width: 280px;
-        height: 100vh;
+        max-width: calc(100vw - 56px);
+        height: 100dvh;
         background: var(--white);
         flex-direction: column;
         padding: 100px 32px 32px;
@@ -1224,13 +1254,43 @@ button {
         display: flex;
     }
 
+    .hero,
+    .carousel {
+        min-height: 100dvh;
+        height: 100dvh;
+    }
+
+    .hero-content {
+        padding: 0 48px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.78rem;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+    }
+
     .hero-title {
         font-size: clamp(2.2rem, 8vw, 3.5rem);
+        margin-bottom: 14px;
+    }
+
+    .hero-desc {
+        font-size: 0.96rem;
+        line-height: 1.65;
+        margin-bottom: 22px;
     }
 
     .hero-actions {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
+    }
+
+    .hero-actions .btn {
+        width: min(100%, 300px);
+        justify-content: center;
+        padding: 12px 22px;
     }
 
     .carousel-arrow {
@@ -1243,6 +1303,9 @@ button {
 
     .slide-services {
         gap: 6px;
+        max-height: 82px;
+        overflow: hidden;
+        margin-bottom: 22px;
     }
 
     .slide-pill {
@@ -1255,30 +1318,54 @@ button {
     }
 
     .category-tabs {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
         gap: 8px;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        scroll-snap-type: x proximity;
+        margin: 0 -18px 40px;
+        padding: 2px 18px 10px;
+        scrollbar-width: none;
     }
 
-    .cat-tab {
-        padding: 10px 18px;
-        font-size: 0.85rem;
-    }
-
-    .cat-label {
+    .category-tabs::-webkit-scrollbar {
         display: none;
     }
 
+    .cat-tab {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        padding: 10px 16px;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+
     .cat-icon {
-        font-size: 1.4rem;
+        display: none;
     }
 
     .sub-tabs {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
         gap: 4px;
         padding: 4px;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        scroll-snap-type: x proximity;
+        scrollbar-width: none;
+    }
+
+    .sub-tabs::-webkit-scrollbar {
+        display: none;
     }
 
     .sub-tab {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
         padding: 8px 14px;
         font-size: 0.8rem;
+        white-space: nowrap;
     }
 
     .services-grid {
@@ -1335,6 +1422,51 @@ button {
 }
 
 @media (max-width: 480px) {
+    .container,
+    .nav-container {
+        padding: 0 16px;
+    }
+
+    .logo-text {
+        font-size: 1.05rem;
+    }
+
+    .nav-menu {
+        width: 270px;
+        max-width: calc(100vw - 44px);
+    }
+
+    .hero-content {
+        padding: 0 34px;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 12vw, 3rem);
+    }
+
+    .hero-desc {
+        font-size: 0.9rem;
+    }
+
+    .slide-services .slide-pill:nth-child(n+4) {
+        display: none;
+    }
+
+    .carousel-arrow {
+        width: 34px;
+        height: 34px;
+    }
+
+    .carousel-prev { left: 8px; }
+    .carousel-next { right: 8px; }
+
+    .category-tabs {
+        margin-left: -16px;
+        margin-right: -16px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
     .about-stats {
         flex-direction: column;
         gap: 24px;
@@ -1355,9 +1487,25 @@ button {
     }
 
     .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
-        width: 52px;
-        height: 52px;
+        bottom: 16px;
+        right: 16px;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-content {
+        padding: 0 28px;
+    }
+
+    .hero-actions .btn {
+        font-size: 0.88rem;
+        padding: 11px 18px;
+    }
+
+    .slide-pill {
+        font-size: 0.72rem;
+        padding: 5px 10px;
     }
 }

@@ -34,11 +34,18 @@ document.addEventListener('DOMContentLoaded', () => {
         navToggle.classList.toggle('active', open);
         navMenu.classList.toggle('active', open);
         navToggle.setAttribute('aria-expanded', String(open));
+        document.body.classList.toggle('menu-open', open);
         document.body.style.overflow = open ? 'hidden' : '';
     }
 
     navToggle.addEventListener('click', () => {
         setMobileMenu(!navMenu.classList.contains('active'));
+    });
+
+    document.body.addEventListener('click', (e) => {
+        if (e.target === document.body && document.body.classList.contains('menu-open')) {
+            setMobileMenu(false);
+        }
     });
 
     // Close menu when clicking a link
