@@ -505,6 +505,15 @@ button {
     transition: var(--transition);
 }
 
+.carousel-slide.active .slide-pill {
+    animation: pillAttention 3s ease-in-out infinite;
+}
+
+.carousel-slide.active .slide-pill:nth-child(2) { animation-delay: 0.25s; }
+.carousel-slide.active .slide-pill:nth-child(3) { animation-delay: 0.5s; }
+.carousel-slide.active .slide-pill:nth-child(4) { animation-delay: 0.75s; }
+.carousel-slide.active .slide-pill:nth-child(5) { animation-delay: 1s; }
+
 .slide-pill:hover {
     background: rgba(255,255,255,0.22);
     transform: translateY(-2px);
@@ -515,6 +524,16 @@ button {
     font-weight: 700;
     color: var(--accent-light);
     font-size: 0.92rem;
+}
+
+@keyframes pillAttention {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    45% {
+        transform: scale(1.045);
+    }
 }
 
 /* Carousel Arrows */
@@ -636,6 +655,19 @@ button {
 }
 
 /* Category Tabs */
+.tabs-helper {
+    display: none;
+    margin: -18px 0 16px;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.tabs-helper--sub {
+    margin: 0 0 12px;
+}
+
 .category-tabs {
     display: flex;
     justify-content: center;
@@ -774,6 +806,18 @@ button {
     background: linear-gradient(135deg, #c09596, #b695c0);
     color: var(--white);
     box-shadow: 0 2px 8px rgba(192, 149, 150, 0.3);
+}
+
+@keyframes mobileTabCue {
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        box-shadow: var(--shadow-sm);
+    }
+    45% {
+        transform: translateY(-2px) scale(1.025);
+        box-shadow: 0 10px 24px rgba(149, 192, 165, 0.2), 0 0 0 3px rgba(255,255,255,0.85);
+    }
 }
 
 /* Sub Panel */
@@ -922,6 +966,7 @@ button {
 }
 
 .btn-reserve {
+    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -934,12 +979,39 @@ button {
     transition: var(--transition);
     white-space: nowrap;
     box-shadow: 0 2px 8px rgba(182, 149, 192, 0.2);
+    overflow: hidden;
+    isolation: isolate;
+    animation: reservePulseBlink 2.4s ease-in-out infinite;
 }
 
 .btn-reserve:hover {
     background: linear-gradient(135deg, #9a78a6, #a87a7b);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(182, 149, 192, 0.3);
+}
+
+@keyframes reservePulseBlink {
+    0%,
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 2px 8px rgba(182, 149, 192, 0.2);
+    }
+    45% {
+        transform: scale(1.06);
+        filter: brightness(1.22);
+        box-shadow: 0 6px 18px rgba(182, 149, 192, 0.44);
+    }
+    54% {
+        transform: scale(1.02);
+        filter: brightness(0.92);
+        box-shadow: 0 2px 8px rgba(182, 149, 192, 0.18);
+    }
+    63% {
+        transform: scale(1.055);
+        filter: brightness(1.18);
+        box-shadow: 0 6px 16px rgba(182, 149, 192, 0.38);
+    }
 }
 
 /* Podology Section */
@@ -1079,6 +1151,7 @@ button {
 }
 
 .podology-reserve {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1089,12 +1162,37 @@ button {
     font-size: 0.85rem;
     font-weight: 700;
     transition: var(--transition);
+    animation: podologyReservePulseBlink 2.4s ease-in-out infinite;
 }
 
 .podology-reserve:hover {
     background: #356a5b;
     transform: translateY(-2px);
     box-shadow: 0 8px 18px rgba(40, 82, 78, 0.22);
+}
+
+@keyframes podologyReservePulseBlink {
+    0%,
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 0 0 rgba(40, 82, 78, 0);
+    }
+    45% {
+        transform: scale(1.06);
+        filter: brightness(1.2);
+        box-shadow: 0 6px 18px rgba(40, 82, 78, 0.34);
+    }
+    54% {
+        transform: scale(1.02);
+        filter: brightness(0.92);
+        box-shadow: 0 2px 8px rgba(40, 82, 78, 0.16);
+    }
+    63% {
+        transform: scale(1.055);
+        filter: brightness(1.16);
+        box-shadow: 0 6px 16px rgba(40, 82, 78, 0.3);
+    }
 }
 
 /* ═══════════════════ ABOUT ═══════════════════ */
@@ -1553,16 +1651,23 @@ button {
         bottom: 72px;
     }
 
+    .tabs-helper {
+        display: block;
+    }
+
     .category-tabs {
         justify-content: flex-start;
         flex-wrap: nowrap;
-        gap: 8px;
+        gap: 10px;
         overflow-x: auto;
         overscroll-behavior-inline: contain;
         scroll-snap-type: x proximity;
-        margin: 0 -18px 40px;
-        padding: 2px 18px 10px;
+        margin: 0 -18px 38px;
+        padding: 8px 18px 14px;
         scrollbar-width: none;
+        background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.8) 8%, rgba(255,255,255,0.8) 92%, rgba(255,255,255,0));
+        border-top: 1px solid rgba(192, 149, 150, 0.22);
+        border-bottom: 1px solid rgba(192, 149, 150, 0.22);
     }
 
     .category-tabs::-webkit-scrollbar {
@@ -1572,9 +1677,26 @@ button {
     .cat-tab {
         flex: 0 0 auto;
         scroll-snap-align: start;
-        padding: 10px 16px;
-        font-size: 0.85rem;
+        min-height: 46px;
+        padding: 12px 20px;
+        font-size: 0.9rem;
         white-space: nowrap;
+        border-color: rgba(192, 149, 150, 0.45);
+        color: var(--text);
+        box-shadow: 0 6px 16px rgba(45, 37, 51, 0.09);
+        animation: mobileTabCue 2.6s ease-in-out 2;
+    }
+
+    .cat-tab:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .cat-tab:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+
+    .cat-tab.active {
+        box-shadow: 0 8px 20px rgba(149, 192, 165, 0.34);
     }
 
     .cat-icon {
@@ -1584,12 +1706,16 @@ button {
     .sub-tabs {
         justify-content: flex-start;
         flex-wrap: nowrap;
-        gap: 4px;
-        padding: 4px;
+        gap: 8px;
+        padding: 8px 10px;
+        margin: 0 -18px 30px;
         overflow-x: auto;
         overscroll-behavior-inline: contain;
         scroll-snap-type: x proximity;
         scrollbar-width: none;
+        border-color: rgba(192, 149, 150, 0.28);
+        border-radius: 0;
+        box-shadow: inset -28px 0 24px -30px rgba(45, 37, 51, 0.55), inset 28px 0 24px -30px rgba(45, 37, 51, 0.35), var(--shadow-sm);
     }
 
     .sub-tabs::-webkit-scrollbar {
@@ -1599,9 +1725,27 @@ button {
     .sub-tab {
         flex: 0 0 auto;
         scroll-snap-align: start;
-        padding: 8px 14px;
-        font-size: 0.8rem;
+        min-height: 40px;
+        padding: 10px 16px;
+        font-size: 0.84rem;
         white-space: nowrap;
+        background: var(--cream);
+        border: 1px solid rgba(192, 149, 150, 0.32);
+        color: var(--text);
+        box-shadow: 0 3px 10px rgba(45, 37, 51, 0.06);
+        animation: mobileTabCue 2.8s ease-in-out 2;
+    }
+
+    .sub-tab:nth-child(2) { animation-delay: 0.15s; }
+    .sub-tab:nth-child(3) { animation-delay: 0.3s; }
+    .sub-tab:nth-child(4) { animation-delay: 0.45s; }
+    .sub-tab:nth-child(5) { animation-delay: 0.6s; }
+    .sub-tab:nth-child(6) { animation-delay: 0.75s; }
+    .sub-tab:nth-child(7) { animation-delay: 0.9s; }
+    .sub-tab:nth-child(8) { animation-delay: 1.05s; }
+
+    .sub-tab.active {
+        box-shadow: 0 6px 16px rgba(192, 149, 150, 0.3);
     }
 
     .services-grid {
@@ -1794,5 +1938,15 @@ button {
     .slide-pill {
         font-size: 0.72rem;
         padding: 5px 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel-slide.active .slide-pill,
+    .cat-tab,
+    .sub-tab,
+    .btn-reserve,
+    .podology-reserve {
+        animation: none;
     }
 }
