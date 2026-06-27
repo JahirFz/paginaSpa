@@ -966,6 +966,7 @@ button {
 }
 
 .btn-reserve {
+    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -978,12 +979,39 @@ button {
     transition: var(--transition);
     white-space: nowrap;
     box-shadow: 0 2px 8px rgba(182, 149, 192, 0.2);
+    overflow: hidden;
+    isolation: isolate;
+    animation: reservePulseBlink 2.4s ease-in-out infinite;
 }
 
 .btn-reserve:hover {
     background: linear-gradient(135deg, #9a78a6, #a87a7b);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(182, 149, 192, 0.3);
+}
+
+@keyframes reservePulseBlink {
+    0%,
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 2px 8px rgba(182, 149, 192, 0.2);
+    }
+    45% {
+        transform: scale(1.06);
+        filter: brightness(1.22);
+        box-shadow: 0 6px 18px rgba(182, 149, 192, 0.44);
+    }
+    54% {
+        transform: scale(1.02);
+        filter: brightness(0.92);
+        box-shadow: 0 2px 8px rgba(182, 149, 192, 0.18);
+    }
+    63% {
+        transform: scale(1.055);
+        filter: brightness(1.18);
+        box-shadow: 0 6px 16px rgba(182, 149, 192, 0.38);
+    }
 }
 
 /* Podology Section */
@@ -1123,6 +1151,7 @@ button {
 }
 
 .podology-reserve {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1133,12 +1162,37 @@ button {
     font-size: 0.85rem;
     font-weight: 700;
     transition: var(--transition);
+    animation: podologyReservePulseBlink 2.4s ease-in-out infinite;
 }
 
 .podology-reserve:hover {
     background: #356a5b;
     transform: translateY(-2px);
     box-shadow: 0 8px 18px rgba(40, 82, 78, 0.22);
+}
+
+@keyframes podologyReservePulseBlink {
+    0%,
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 0 0 rgba(40, 82, 78, 0);
+    }
+    45% {
+        transform: scale(1.06);
+        filter: brightness(1.2);
+        box-shadow: 0 6px 18px rgba(40, 82, 78, 0.34);
+    }
+    54% {
+        transform: scale(1.02);
+        filter: brightness(0.92);
+        box-shadow: 0 2px 8px rgba(40, 82, 78, 0.16);
+    }
+    63% {
+        transform: scale(1.055);
+        filter: brightness(1.16);
+        box-shadow: 0 6px 16px rgba(40, 82, 78, 0.3);
+    }
 }
 
 /* ═══════════════════ ABOUT ═══════════════════ */
@@ -1890,7 +1944,9 @@ button {
 @media (prefers-reduced-motion: reduce) {
     .carousel-slide.active .slide-pill,
     .cat-tab,
-    .sub-tab {
+    .sub-tab,
+    .btn-reserve,
+    .podology-reserve {
         animation: none;
     }
 }
