@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const catTabs = document.querySelectorAll('.cat-tab');
     const catPanels = document.querySelectorAll('.category-panel');
     const serviceCategoryLinks = document.querySelectorAll('[data-service-category]');
+    const mobileTabsQuery = window.matchMedia('(max-width: 768px)');
+
+    function centerMobileTab(tab) {
+        if (!mobileTabsQuery.matches || !tab) return;
+        tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
 
     // ═══════════════════ NAVBAR SCROLL ═══════════════════
     let lastScroll = 0;
@@ -99,6 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
             panel.setAttribute('aria-hidden', String(!selected));
         });
 
+        centerMobileTab(targetTab);
+
         // Re-trigger reveal animations for new panel
         requestAnimationFrame(() => {
             const revealElements = targetPanel.querySelectorAll('.reveal');
@@ -176,6 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
             p.classList.toggle('active', selected);
             p.setAttribute('aria-hidden', String(!selected));
         });
+
+        centerMobileTab(subTab);
 
         const targetSub = document.getElementById(`sub-${subId}`);
         if (targetSub) {
