@@ -505,6 +505,15 @@ button {
     transition: var(--transition);
 }
 
+.carousel-slide.active .slide-pill {
+    animation: pillAttention 3s ease-in-out infinite;
+}
+
+.carousel-slide.active .slide-pill:nth-child(2) { animation-delay: 0.25s; }
+.carousel-slide.active .slide-pill:nth-child(3) { animation-delay: 0.5s; }
+.carousel-slide.active .slide-pill:nth-child(4) { animation-delay: 0.75s; }
+.carousel-slide.active .slide-pill:nth-child(5) { animation-delay: 1s; }
+
 .slide-pill:hover {
     background: rgba(255,255,255,0.22);
     transform: translateY(-2px);
@@ -515,6 +524,26 @@ button {
     font-weight: 700;
     color: var(--accent-light);
     font-size: 0.92rem;
+}
+
+@keyframes pillAttention {
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(255,255,255,0);
+        border-color: rgba(255,255,255,0.2);
+    }
+    45% {
+        transform: scale(1.045);
+        box-shadow: 0 10px 30px rgba(255,255,255,0.16), 0 0 18px rgba(232,213,196,0.32);
+        border-color: rgba(232,213,196,0.52);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel-slide.active .slide-pill {
+        animation: none;
+    }
 }
 
 /* Carousel Arrows */
